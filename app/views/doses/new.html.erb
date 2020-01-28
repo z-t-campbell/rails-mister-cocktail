@@ -1,0 +1,8 @@
+<h1>Dose</h1>
+
+<%= simple_form_for([@cocktail, @dose]) do |f|%>
+<%= f.label :description %>
+<%= f.text_field :description %>
+<%= f.association :ingredient %>
+<%= f.submit%>
+<%end%>
