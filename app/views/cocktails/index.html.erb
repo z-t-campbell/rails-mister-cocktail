@@ -1,7 +1,18 @@
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(./app/assets/images/bar.jpg)>
+  <div class="container">
+    <h1>Mr Cocktail </h1>
+    <p>Your own personal online cocktail bar.</p>
+    <%= link_to "Create new cocktail", new_cocktail_path%>
+  </div>
+</div>
+
 <h1>List of cocktails</h1>
 
 <ul>
   <% @cocktails.each do |cocktail|%>
+    <% if  cocktail.photo %>
+      <%= cl_image_tag cocktail.photo.key,height: 300, width: 400, crop: :fill %>
+    <%end%>
   <li><%= link_to cocktail.name, cocktail_path(cocktail) %></li>
   <% end%>
 </ul>
